@@ -29,8 +29,6 @@
   - [Production mode](#production-mode)
     - [Run tests](#run-tests)
     - [Deployment](#deployment)
-  - [Local deployment using Docker:](#local-deployment-using-docker)
-  - [Local deployment using Docker-compose:](#local-deployment-using-docker-compose)
     - [Cloud Production deployment:](#cloud-production-deployment)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
@@ -59,9 +57,6 @@
 <li> Babel </li>
 <li> Git </li>
 <li> Github actions </li>
-<li> Docker </li>
-<li> Docker Hub </li>
-<li> Docker Compose </li>
 <li> Bash Script </li>
 <!-- Features -->
 
@@ -73,7 +68,6 @@
 - **[ES6 Modules]**
 - **[Webpack Bundling ]**
 - **[Express Server to handle routing]**
-- **[Docker and Docker Compose]**
 - **[Bash Script to automate deployment]**
 - **[CI and CD Deployment with Netlify]**
 
@@ -103,8 +97,6 @@ To run this project  you need the following tools:
 - [Git and GitHub ]
 - [Nodejs ]
 - [Express ]
-- [docker and docker compose ]
-- [Docker Hub ]
 - [Bash Script ]
 - [openssl to generate self signed certificates ]
 - [Webpack Installation ]
@@ -202,13 +194,13 @@ Concurrent, the npm package for running multiple commands in parallel
 To run locally run the following command:
 ## Development mode
 ```sh
-    npm run build-dev
-    npm run devserver-reload    
+    "build": "webpack --mode=development ",
+    "start": "node server.js"  
 ```
 ## Production mode
 ```sh
-    npm run build-prod
-    npm run server-prod
+    "build": "webpack --mode=development ",
+    "start": "node server.js"
 ```
 
 
@@ -232,32 +224,6 @@ To test the ESLint linter:
 
 
 ### Deployment
-
-## Local deployment using Docker:
-
-In root project folder run the following command:
-```sh
-    docker  build -t TV-Maze-App nginx/Dockerfile .
-```
-Then run the following command:
-
-```sh
-
-    docker -it --name tvapp  run -p 443:443 -p 80:80 -v ./dist😕usr/share/nginx/html -d TV-Maze-App
-```
-Be sure to replace the path of your project dist folder 
-
-If you want to use docker hub image repository, run the following command:
-```sh
-    docker pull 810129/tvapp
-    docker -it --name tvapp  run -p 443:443 -p 80:80 -v ./dist😕usr/share/nginx/html -d 810129/tvapp
-```
-## Local deployment using Docker-compose:
-In root folder run the following command:
-```sh
-    docker compose up -d
-```
-The above command will deploy the app in localhost on port 443 and 80 through dockerized nginx webserver.
 
 ### Cloud Production deployment:
 In root folder run the following command:
@@ -316,7 +282,7 @@ https://www.linkedin.com/in/elaine-leal/
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](
-https://github.com/alyconr/TV-AMAZE-APP.git/issues
+https://github.com/ElaineLeal08/Form_Linters.git
 ).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
